@@ -1,0 +1,11 @@
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\bin\Debug\BugTrackerApp.exe.config
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\bin\Debug\BugTrackerApp.exe
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\bin\Debug\BugTrackerApp.pdb
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.csproj.AssemblyReference.cache
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.csproj.SuggestedBindingRedirects.cache
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.Form1.resources
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.Properties.Resources.resources
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.csproj.GenerateResource.cache
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.csproj.CoreCompileInputs.cache
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.exe
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.pdb
