@@ -34,9 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2283, 1409);
+            this.ClientSize = new System.Drawing.Size(2679, 1624);
             this.Name = "MainPage";
-            this.Text = "MainPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.MainPage_Load);
             this.ResumeLayout(false);
 
         }

@@ -12,7 +12,7 @@ namespace BugTrackerApp
 
         void AddUser(Developer employee);
         void UpdatePassword(string userName, Developer employee);
-        Developer GetEmployee(string userName, string password);
+        bool CheckLoginInfo(string userName, string password);
     }
 
     internal class UserRepository : LoginFunctions
@@ -22,15 +22,33 @@ namespace BugTrackerApp
         {
             entities = new devsEntities();
         }
+
+        // add user to database
         public void AddUser(Developer employee)
         {
             entities.Developers.Add(employee);
             entities.SaveChanges();
+
         }
 
-        public Developer GetEmployee(string userName, string password)
+        // check user's login information | verify username and password against database
+        public bool CheckLoginInfo(string userName, string password)
         {
-            throw new NotImplementedException();
+            string usernameToCheck = userName;
+            string passwordToCheck = password;
+
+            // find is user exist in database using username
+            var userToFind = entities.Developers.Find(userName);
+
+            // if not found
+            if (userToFind == null)
+                return false;
+
+            // if found, check its username and password against input
+            if (userToFind.UserName == usernameToCheck && userToFind.Password == passwordToCheck)
+                return true;
+
+            return false;
         }
 
         public void UpdatePassword(string userName, Developer employee)
