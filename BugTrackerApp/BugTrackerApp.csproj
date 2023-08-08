@@ -58,14 +58,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bugTrackerDevs.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bugTrackerDevs.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bugTrackerDevs.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bugTrackerDevs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bugTrackerDevs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bugTrackerDevs.edmx</DependentUpon>
+    </Compile>
     <Compile Include="CreateNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateNewUser.Designer.cs">
       <DependentUpon>CreateNewUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee.cs">
-      <DependentUpon>UserDatabase.tt</DependentUpon>
+    <Compile Include="Developer.cs">
+      <DependentUpon>bugTrackerDevs.tt</DependentUpon>
     </Compile>
     <Compile Include="ForgotPasswordPage.cs">
       <SubType>Form</SubType>
@@ -87,20 +102,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDatabase.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDatabase.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserDatabase.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserDatabase.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDatabase.edmx</DependentUpon>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>bugTrackerDevs.tt</DependentUpon>
     </Compile>
     <Compile Include="UserRepository.cs" />
     <EmbeddedResource Include="CreateNewUser.resx">
@@ -124,6 +127,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="bugTrackerDevs.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>bugTrackerDevs.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="bugTrackerDevs.edmx.diagram">
+      <DependentUpon>bugTrackerDevs.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -134,31 +144,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="UserDatabase.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserDatabase.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="UserDatabase.edmx.diagram">
-      <DependentUpon>UserDatabase.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UserDatabase.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UserDatabase.Context.cs</LastGenOutput>
-      <DependentUpon>UserDatabase.edmx</DependentUpon>
-    </Content>
-    <Content Include="UserDatabase.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserDatabase.edmx</DependentUpon>
-      <LastGenOutput>UserDatabase.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="bugTrackerDevs.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bugTrackerDevs.edmx</DependentUpon>
+      <LastGenOutput>bugTrackerDevs.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="bugTrackerDevs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bugTrackerDevs.edmx</DependentUpon>
+      <LastGenOutput>bugTrackerDevs.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,18 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtUserName_CNU = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtPassword_CNU = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.txtConfirmPassword_CNU = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtFirstName_CNU = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLastName_CNU = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -81,41 +81,41 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.txtUserName);
+            this.panel1.Controls.Add(this.txtUserName_CNU);
             this.panel1.Location = new System.Drawing.Point(387, 374);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(772, 71);
             this.panel1.TabIndex = 7;
             // 
-            // txtUserName
+            // txtUserName_CNU
             // 
-            this.txtUserName.BackColor = System.Drawing.Color.White;
-            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserName.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(9, 23);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(743, 34);
-            this.txtUserName.TabIndex = 1;
+            this.txtUserName_CNU.BackColor = System.Drawing.Color.White;
+            this.txtUserName_CNU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserName_CNU.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName_CNU.Location = new System.Drawing.Point(9, 23);
+            this.txtUserName_CNU.Name = "txtUserName_CNU";
+            this.txtUserName_CNU.Size = new System.Drawing.Size(743, 34);
+            this.txtUserName_CNU.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.txtPassword);
+            this.panel2.Controls.Add(this.txtPassword_CNU);
             this.panel2.Location = new System.Drawing.Point(387, 526);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(772, 71);
             this.panel2.TabIndex = 8;
             // 
-            // txtPassword
+            // txtPassword_CNU
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.White;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(9, 21);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(743, 34);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword_CNU.BackColor = System.Drawing.Color.White;
+            this.txtPassword_CNU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword_CNU.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword_CNU.Location = new System.Drawing.Point(9, 21);
+            this.txtPassword_CNU.Name = "txtPassword_CNU";
+            this.txtPassword_CNU.Size = new System.Drawing.Size(743, 34);
+            this.txtPassword_CNU.TabIndex = 1;
+            this.txtPassword_CNU.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -133,22 +133,22 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.txtConfirmPassword);
+            this.panel3.Controls.Add(this.txtConfirmPassword_CNU);
             this.panel3.Location = new System.Drawing.Point(387, 695);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(772, 71);
             this.panel3.TabIndex = 9;
             // 
-            // txtConfirmPassword
+            // txtConfirmPassword_CNU
             // 
-            this.txtConfirmPassword.BackColor = System.Drawing.Color.White;
-            this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(9, 21);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(743, 34);
-            this.txtConfirmPassword.TabIndex = 1;
-            this.txtConfirmPassword.UseSystemPasswordChar = true;
+            this.txtConfirmPassword_CNU.BackColor = System.Drawing.Color.White;
+            this.txtConfirmPassword_CNU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConfirmPassword_CNU.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPassword_CNU.Location = new System.Drawing.Point(9, 21);
+            this.txtConfirmPassword_CNU.Name = "txtConfirmPassword_CNU";
+            this.txtConfirmPassword_CNU.Size = new System.Drawing.Size(743, 34);
+            this.txtConfirmPassword_CNU.TabIndex = 1;
+            this.txtConfirmPassword_CNU.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -166,21 +166,21 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.txtFirstName);
+            this.panel4.Controls.Add(this.txtFirstName_CNU);
             this.panel4.Location = new System.Drawing.Point(387, 857);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(772, 71);
             this.panel4.TabIndex = 10;
             // 
-            // txtFirstName
+            // txtFirstName_CNU
             // 
-            this.txtFirstName.BackColor = System.Drawing.Color.White;
-            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFirstName.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(9, 21);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(743, 34);
-            this.txtFirstName.TabIndex = 1;
+            this.txtFirstName_CNU.BackColor = System.Drawing.Color.White;
+            this.txtFirstName_CNU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFirstName_CNU.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName_CNU.Location = new System.Drawing.Point(9, 21);
+            this.txtFirstName_CNU.Name = "txtFirstName_CNU";
+            this.txtFirstName_CNU.Size = new System.Drawing.Size(743, 34);
+            this.txtFirstName_CNU.TabIndex = 1;
             // 
             // label4
             // 
@@ -198,21 +198,21 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.txtLastName_CNU);
             this.panel5.Location = new System.Drawing.Point(387, 1029);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(772, 71);
             this.panel5.TabIndex = 11;
             // 
-            // textBox1
+            // txtLastName_CNU
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(9, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(743, 34);
-            this.textBox1.TabIndex = 1;
+            this.txtLastName_CNU.BackColor = System.Drawing.Color.White;
+            this.txtLastName_CNU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastName_CNU.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName_CNU.Location = new System.Drawing.Point(9, 21);
+            this.txtLastName_CNU.Name = "txtLastName_CNU";
+            this.txtLastName_CNU.Size = new System.Drawing.Size(743, 34);
+            this.txtLastName_CNU.TabIndex = 1;
             // 
             // label5
             // 
@@ -241,6 +241,7 @@
             this.btnRegister.TabIndex = 12;
             this.btnRegister.Text = "REGISTER";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnClear
             // 
@@ -256,6 +257,7 @@
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnBackToLogin
             // 
@@ -273,6 +275,7 @@
             this.btnBackToLogin.TabIndex = 14;
             this.btnBackToLogin.Text = "Back To Login";
             this.btnBackToLogin.UseVisualStyleBackColor = false;
+            this.btnBackToLogin.Click += new System.EventHandler(this.btnBackToLogin_Click);
             // 
             // CreateNewUser
             // 
@@ -316,18 +319,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtUserName_CNU;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtPassword_CNU;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.TextBox txtConfirmPassword_CNU;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtFirstName_CNU;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLastName_CNU;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnClear;

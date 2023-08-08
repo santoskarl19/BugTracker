@@ -6,35 +6,36 @@ using System.Threading.Tasks;
 
 namespace BugTrackerApp
 {
+    
     interface LoginFunctions
     {
-        // TODO: redo database and create new table!!
-        
-        void AddUser(Employee employee);
-        void UpdatePassword(string userName, Employee employee);
-        Employee GetEmployee(string userName, string password);
+
+        void AddUser(Developer employee);
+        void UpdatePassword(string userName, Developer employee);
+        Developer GetEmployee(string userName, string password);
     }
 
     internal class UserRepository : LoginFunctions
     {
+        devsEntities entities;
         public UserRepository()
         {
-            //entities = new BugTrackerUserDatabaseEntities();
+            entities = new devsEntities();
         }
-        public void AddUser(Employee employee)
+        public void AddUser(Developer employee)
+        {
+            entities.Developers.Add(employee);
+            entities.SaveChanges();
+        }
+
+        public Developer GetEmployee(string userName, string password)
         {
             throw new NotImplementedException();
         }
 
-        public Employee GetEmployee(string userName, string password)
-        {
-            return entities.Employees.Find(userName, password);
-        }
-
-        public void UpdatePassword(string userName, Employee employee)
+        public void UpdatePassword(string userName, Developer employee)
         {
             throw new NotImplementedException();
-            
         }
     }
 }

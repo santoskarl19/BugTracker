@@ -18,6 +18,7 @@ namespace BugTrackerApp
         UserRepository userRepository;
         MainPage mainPage = new MainPage();
         CreateNewUser createNewUser = new CreateNewUser();
+
         public LogInPage()
         {
             InitializeComponent();
@@ -42,10 +43,10 @@ namespace BugTrackerApp
             
         }
 
+        // open CreateNewUser form
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             createNewUser.Show();
-            
         }
     }
 }
