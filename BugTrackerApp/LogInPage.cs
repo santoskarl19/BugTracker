@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
-
+using System.Data.SqlClient;
 
 namespace BugTrackerApp
 {
     public partial class LogInPage : MaterialForm
     {
         UserRepository userRepository;
+        MainPage mainPage = new MainPage();
+        CreateNewUser createNewUser = new CreateNewUser();
         public LogInPage()
         {
             InitializeComponent();
@@ -34,10 +36,16 @@ namespace BugTrackerApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string userName = txtPassword.Text;
+            string userName = txtUserName.Text;
             string password = txtPassword.Text;
 
-            userRepository.GetEmployee(userName, password);
+            
+        }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            createNewUser.Show();
+            
         }
     }
 }

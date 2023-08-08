@@ -8,7 +8,7 @@ namespace BugTrackerApp
 {
     interface LoginFunctions
     {
-        List
+        
         void AddUser(Employee employee);
         void UpdatePassword(string userName, Employee employee);
         Employee GetEmployee(string userName, string password);
@@ -16,10 +16,9 @@ namespace BugTrackerApp
 
     internal class UserRepository : LoginFunctions
     {
-        BugTrackerUserDatabaseEntities entities;
         public UserRepository()
         {
-            entities = new BugTrackerUserDatabaseEntities();
+            //entities = new BugTrackerUserDatabaseEntities();
         }
         public void AddUser(Employee employee)
         {
@@ -28,12 +27,13 @@ namespace BugTrackerApp
 
         public Employee GetEmployee(string userName, string password)
         {
-            return entities.Employees.Find(userName, password);
+            //return entities.Employees.Find(userName, password);
         }
 
         public void UpdatePassword(string userName, Employee employee)
         {
             throw new NotImplementedException();
+            
         }
     }
 }
