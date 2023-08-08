@@ -8,6 +8,7 @@ namespace BugTrackerApp
 {
     interface LoginFunctions
     {
+        // TODO: redo database and create new table!!
         
         void AddUser(Employee employee);
         void UpdatePassword(string userName, Employee employee);
@@ -27,7 +28,7 @@ namespace BugTrackerApp
 
         public Employee GetEmployee(string userName, string password)
         {
-            //return entities.Employees.Find(userName, password);
+            return entities.Employees.Find(userName, password);
         }
 
         public void UpdatePassword(string userName, Employee employee)
