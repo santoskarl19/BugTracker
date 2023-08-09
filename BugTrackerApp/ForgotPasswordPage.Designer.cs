@@ -42,7 +42,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnBackToLogin_Reset = new System.Windows.Forms.Button();
             this.btnClear_Reset = new System.Windows.Forms.Button();
-            this.btnVerify_Reset = new System.Windows.Forms.Button();
+            this.btnSubmitReset = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtConfirmNewPassword_Reset = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -185,7 +185,7 @@
             this.btnBackToLogin_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToLogin_Reset.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackToLogin_Reset.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnBackToLogin_Reset.Location = new System.Drawing.Point(622, 1267);
+            this.btnBackToLogin_Reset.Location = new System.Drawing.Point(623, 1297);
             this.btnBackToLogin_Reset.Name = "btnBackToLogin_Reset";
             this.btnBackToLogin_Reset.Size = new System.Drawing.Size(332, 94);
             this.btnBackToLogin_Reset.TabIndex = 24;
@@ -201,7 +201,7 @@
             this.btnClear_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear_Reset.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear_Reset.ForeColor = System.Drawing.Color.White;
-            this.btnClear_Reset.Location = new System.Drawing.Point(898, 1189);
+            this.btnClear_Reset.Location = new System.Drawing.Point(653, 1221);
             this.btnClear_Reset.Name = "btnClear_Reset";
             this.btnClear_Reset.Size = new System.Drawing.Size(282, 60);
             this.btnClear_Reset.TabIndex = 23;
@@ -209,21 +209,21 @@
             this.btnClear_Reset.UseVisualStyleBackColor = false;
             this.btnClear_Reset.Click += new System.EventHandler(this.btnClear_Reset_Click);
             // 
-            // btnVerify_Reset
+            // btnSubmitReset
             // 
-            this.btnVerify_Reset.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnVerify_Reset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerify_Reset.FlatAppearance.BorderSize = 0;
-            this.btnVerify_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerify_Reset.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerify_Reset.ForeColor = System.Drawing.Color.White;
-            this.btnVerify_Reset.Location = new System.Drawing.Point(417, 1189);
-            this.btnVerify_Reset.Name = "btnVerify_Reset";
-            this.btnVerify_Reset.Size = new System.Drawing.Size(282, 60);
-            this.btnVerify_Reset.TabIndex = 22;
-            this.btnVerify_Reset.Text = "VERIFY";
-            this.btnVerify_Reset.UseVisualStyleBackColor = false;
-            this.btnVerify_Reset.Click += new System.EventHandler(this.btnVerify_Reset_Click);
+            this.btnSubmitReset.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSubmitReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubmitReset.FlatAppearance.BorderSize = 0;
+            this.btnSubmitReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmitReset.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitReset.ForeColor = System.Drawing.Color.White;
+            this.btnSubmitReset.Location = new System.Drawing.Point(653, 1142);
+            this.btnSubmitReset.Name = "btnSubmitReset";
+            this.btnSubmitReset.Size = new System.Drawing.Size(282, 60);
+            this.btnSubmitReset.TabIndex = 22;
+            this.btnSubmitReset.Text = "RESET PASSWORD";
+            this.btnSubmitReset.UseVisualStyleBackColor = false;
+            this.btnSubmitReset.Click += new System.EventHandler(this.btnSubmitReset_Click);
             // 
             // panel3
             // 
@@ -303,7 +303,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnBackToLogin_Reset);
             this.Controls.Add(this.btnClear_Reset);
-            this.Controls.Add(this.btnVerify_Reset);
+            this.Controls.Add(this.btnSubmitReset);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel6);
@@ -345,7 +345,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnBackToLogin_Reset;
         private System.Windows.Forms.Button btnClear_Reset;
-        private System.Windows.Forms.Button btnVerify_Reset;
+        private System.Windows.Forms.Button btnSubmitReset;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtConfirmNewPassword_Reset;
         private System.Windows.Forms.Label label3;

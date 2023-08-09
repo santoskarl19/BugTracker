@@ -33,13 +33,14 @@ namespace BugTrackerApp
         }
 
         // prompts the reset password form when user inputs valid username, question, and password
-        private void btnVerify_Reset_Click(object sender, EventArgs e)
+        private void btnSubmitReset_Click(object sender, EventArgs e)
         {
             string userName = txtUserName_Reset.Text;
             string securityQuestion = cmbBoxSecQuestion_Reset.Text;
             string securityPassword = txtSecAnswer_Reset.Text;
+            string newPassword = txtNewPassword_Reset.Text;
 
-            bool verifyForgotPassword = userRepository.UpdatePasswordVerification(userName, securityQuestion, securityPassword);
+            bool verifyForgotPassword = userRepository.UpdatePasswordVerification(userName, securityQuestion, securityPassword, newPassword);
 
             if (!verifyForgotPassword)
             {
@@ -48,6 +49,8 @@ namespace BugTrackerApp
                 txtUserName_Reset.Clear();
                 cmbBoxSecQuestion_Reset.SelectedIndex = -1;
                 txtSecAnswer_Reset.Clear();
+                txtNewPassword_Reset.Clear();
+                txtConfirmNewPassword_Reset.Clear();
             }
             else
             {
@@ -58,6 +61,8 @@ namespace BugTrackerApp
                 txtUserName_Reset.Clear();
                 cmbBoxSecQuestion_Reset.SelectedIndex = -1;
                 txtSecAnswer_Reset.Clear();
+                txtNewPassword_Reset.Clear();
+                txtConfirmNewPassword_Reset.Clear();
             }
         }
 

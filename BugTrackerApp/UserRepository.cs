@@ -11,14 +11,13 @@ namespace BugTrackerApp
     {
 
         void AddUser(developer employee);
-        bool UpdatePasswordVerification(string userName, string secQuestion, string secAnswer);
+        bool UpdatePasswordVerification(string userName, string secQuestion, string secAnswer, string newPassword);
         bool CheckLoginInfo(string userName, string password);
     }
 
     internal class UserRepository : LoginFunctions
     {
         UserDatabaseEntities1 entities;
-        UserName userName;
         public UserRepository()
         {
             entities = new UserDatabaseEntities1();
@@ -53,11 +52,12 @@ namespace BugTrackerApp
         }
 
         // to reset passwrod | verify username, security question and security password
-        public bool UpdatePasswordVerification(string userName, string secQuestion, string secAnswer)
+        public bool UpdatePasswordVerification(string userName, string secQuestion, string secAnswer, string password)
         {
             string userNameToCheck = userName;
             string secQuestionToCheck = secQuestion;
             string secAnswerToCheck = secAnswer;
+            string newPassword = password;
 
             // find if user exist in database using username
             var userToFind = entities.developers.Find(userName);
@@ -71,7 +71,8 @@ namespace BugTrackerApp
                 userToFind.SecurityQuestion ==  secQuestionToCheck &&
                 userToFind.SecurityAnswer == secAnswerToCheck)
             {
-
+                userToFind.Password = newPassword;
+                entities.SaveChanges();
 
                 return true;
             }
