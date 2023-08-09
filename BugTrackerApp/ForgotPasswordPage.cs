@@ -14,6 +14,7 @@ namespace BugTrackerApp
 {
     public partial class ForgotPasswordPage : MaterialForm
     {
+        UserRepository userRepository;
         public ForgotPasswordPage()
         {
             InitializeComponent();
@@ -25,15 +26,42 @@ namespace BugTrackerApp
 
         private void ForgotPasswordPage_Load(object sender, EventArgs e)
         {
+            userRepository = new UserRepository();
+
             cmbBoxSecQuestion_Reset.DataSource = SecurityQuestion.Questions;
             cmbBoxSecQuestion_Reset.SelectedIndex = -1;
         }
 
+        // prompts the reset password form when user inputs valid username, question, and password
         private void btnVerify_Reset_Click(object sender, EventArgs e)
         {
-            // TODO
+            string userName = txtUserName_Reset.Text;
+            string securityQuestion = cmbBoxSecQuestion_Reset.Text;
+            string securityPassword = txtSecAnswer_Reset.Text;
+
+            bool verifyForgotPassword = userRepository.UpdatePasswordVerification(userName, securityQuestion, securityPassword);
+
+            if (!verifyForgotPassword)
+            {
+                MessageBox.Show("Account Authentication Failed", "Bad Credentials");
+
+                txtUserName_Reset.Clear();
+                cmbBoxSecQuestion_Reset.SelectedIndex = -1;
+                txtSecAnswer_Reset.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Your Password Has Been Reset!");
+
+                //todo
+
+                txtUserName_Reset.Clear();
+                cmbBoxSecQuestion_Reset.SelectedIndex = -1;
+                txtSecAnswer_Reset.Clear();
+            }
         }
 
+        // clears input fields
         private void btnClear_Reset_Click(object sender, EventArgs e)
         {
             txtUserName_Reset.Clear();
@@ -41,6 +69,7 @@ namespace BugTrackerApp
             txtSecAnswer_Reset.Clear();
         }
 
+        // closes form
         private void btnBackToLogin_Reset_Click(object sender, EventArgs e)
         {
             this.Hide();

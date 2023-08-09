@@ -18,3 +18,4 @@ C:\Git Desktop\Repos\BugTracker\BugTrackerApp\bin\Debug\EntityFramework.dll
 C:\Git Desktop\Repos\BugTracker\BugTrackerApp\bin\Debug\EntityFramework.SqlServer.dll
 C:\Git Desktop\Repos\BugTracker\BugTrackerApp\bin\Debug\EntityFramework.xml
 C:\Git Desktop\Repos\BugTracker\BugTrackerApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.ResetPassword.resources
