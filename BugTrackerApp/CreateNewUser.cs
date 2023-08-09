@@ -32,9 +32,10 @@ namespace BugTrackerApp
             cmbBoxSecQuestion.SelectedIndex = -1;
         }
 
+        // this closes form
         private void btnBackToLogin_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         // function to clear all input fields

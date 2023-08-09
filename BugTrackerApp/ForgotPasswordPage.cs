@@ -43,7 +43,7 @@ namespace BugTrackerApp
 
         private void btnBackToLogin_Reset_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
     }
 }
