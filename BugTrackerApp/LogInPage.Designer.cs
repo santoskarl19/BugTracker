@@ -149,6 +149,7 @@
             this.btnForgotPassword.TabIndex = 4;
             this.btnForgotPassword.Text = "Forget Password?";
             this.btnForgotPassword.UseVisualStyleBackColor = false;
+            this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
             // 
             // btnCreateAccount
             // 

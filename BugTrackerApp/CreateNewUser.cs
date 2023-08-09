@@ -19,16 +19,17 @@ namespace BugTrackerApp
         public CreateNewUser()
         {
             InitializeComponent();
-        }
-
-        private void CreateNewUser_Load(object sender, EventArgs e)
-        {
             var skinManager = MaterialSkinManager.Instance;
             SkinManager.AddFormToManage(this);
             SkinManager.Theme = MaterialSkinManager.Themes.DARK;
             SkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
+        }
 
+        private void CreateNewUser_Load(object sender, EventArgs e)
+        {
             userRepository = new UserRepository();
+            cmbBoxSecQuestion.DataSource = SecurityQuestion.Questions;
+            cmbBoxSecQuestion.SelectedIndex = -1;
         }
 
         private void btnBackToLogin_Click(object sender, EventArgs e)
@@ -44,6 +45,8 @@ namespace BugTrackerApp
             txtConfirmPassword_CNU.Clear();
             txtFirstName_CNU.Clear();
             txtLastName_CNU.Clear();
+            cmbBoxSecQuestion.SelectedIndex = -1;
+            txtSecAnswer.Clear();
         }
 
         // clear data fields
@@ -67,11 +70,15 @@ namespace BugTrackerApp
                 txtPassword_CNU.Text == txtConfirmPassword_CNU.Text && !string.IsNullOrEmpty(txtPassword_CNU.Text))
             {
                 // instantiate new user and add fields as properties
-                var user = new Developer();
+                var user = new developer();
                 user.UserName = txtUserName_CNU.Text;
                 user.Password = txtPassword_CNU.Text;
                 user.FirstName = txtFirstName_CNU.Text;
                 user.LastName = txtLastName_CNU.Text;
+                user.AdminRights = "No"; // default admin rights
+                user.SecurityQuestion = cmbBoxSecQuestion.Text;
+                user.SecurityAnswer = txtSecAnswer.Text;
+
 
                 // add user to repository
                 userRepository.AddUser(user);

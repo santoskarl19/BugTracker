@@ -18,6 +18,7 @@ namespace BugTrackerApp
         UserRepository userRepository;
         MainPage mainPage = new MainPage();
         CreateNewUser createNewUser = new CreateNewUser();
+        ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
 
         public LogInPage()
         {
@@ -44,12 +45,18 @@ namespace BugTrackerApp
 
             if(!checkLoginInfo)
             {
-                MessageBox.Show("Incorrect Username or Password!");
+                MessageBox.Show("Incorrect Username or Password!", "Login failed");
+
+                txtUserName.Clear();
+                txtPassword.Clear();
             }
             else
             {
                 MessageBox.Show("Login Successful!");
                 mainPage.Show();
+
+                txtUserName.Clear();
+                txtPassword.Clear();
             }
         }
 
@@ -57,6 +64,11 @@ namespace BugTrackerApp
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             createNewUser.Show();
+        }
+
+        private void btnForgotPassword_Click(object sender, EventArgs e)
+        {
+            forgotPasswordPage.Show();
         }
     }
 }
