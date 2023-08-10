@@ -28,7 +28,6 @@ namespace BugTrackerApp
         {
             entities.developers.Add(employee);
             entities.SaveChanges();
-
         }
 
         // check user's login information | verify username and password against database
@@ -71,6 +70,7 @@ namespace BugTrackerApp
                 userToFind.SecurityQuestion ==  secQuestionToCheck &&
                 userToFind.SecurityAnswer == secAnswerToCheck)
             {
+                // password update
                 userToFind.Password = newPassword;
                 entities.SaveChanges();
 

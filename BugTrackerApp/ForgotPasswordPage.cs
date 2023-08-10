@@ -56,8 +56,6 @@ namespace BugTrackerApp
             {
                 MessageBox.Show("Your Password Has Been Reset!");
 
-                //todo
-
                 txtUserName_Reset.Clear();
                 cmbBoxSecQuestion_Reset.SelectedIndex = -1;
                 txtSecAnswer_Reset.Clear();
@@ -78,6 +76,7 @@ namespace BugTrackerApp
         private void btnBackToLogin_Reset_Click(object sender, EventArgs e)
         {
             this.Hide();
+
         }
     }
 }

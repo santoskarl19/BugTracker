@@ -32,6 +32,8 @@ namespace BugTrackerApp
         private void Form1_Load(object sender, EventArgs e)
         {
             userRepository = new UserRepository();
+
+            //
         }
 
         // log in functionality
