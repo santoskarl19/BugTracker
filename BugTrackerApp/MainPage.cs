@@ -14,7 +14,8 @@ namespace BugTrackerApp
 {
     public partial class MainPage : MaterialForm
     {
-        bool sidebarExpand;
+
+        TicketRepository ticketRepository;
         public MainPage()
         {
             InitializeComponent();
@@ -27,6 +28,9 @@ namespace BugTrackerApp
         private void MainPage_Load(object sender, EventArgs e)
         {
             CollapseMenu();
+
+            ticketRepository = new TicketRepository();
+            dataGridTickets.DataSource = ticketRepository.GetTickets();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -41,14 +45,12 @@ namespace BugTrackerApp
             if (this.sidebar.Width > 200)
             {
                 sidebar.Width = 50;
-                sidebarExpand = false;
             }
 
             // maximize
             else
             {
                 sidebar.Width = 492;
-                sidebarExpand = true;
             }
         }
     }

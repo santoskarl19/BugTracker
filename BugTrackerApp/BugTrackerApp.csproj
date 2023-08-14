@@ -106,6 +106,25 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>developerDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="ticket.cs">
+      <DependentUpon>Tickets.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketRepository.cs" />
+    <Compile Include="Tickets.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tickets.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tickets.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tickets.edmx</DependentUpon>
+    </Compile>
     <Compile Include="UserRepository.cs" />
     <EmbeddedResource Include="CreateNewUser.resx">
       <DependentUpon>CreateNewUser.cs</DependentUpon>
@@ -145,6 +164,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="Tickets.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Tickets.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Tickets.edmx.diagram">
+      <DependentUpon>Tickets.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -162,6 +188,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>developerDatabase.edmx</DependentUpon>
       <LastGenOutput>developerDatabase.cs</LastGenOutput>
+    </Content>
+    <Content Include="Tickets.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Tickets.edmx</DependentUpon>
+      <LastGenOutput>Tickets.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Tickets.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Tickets.edmx</DependentUpon>
+      <LastGenOutput>Tickets.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

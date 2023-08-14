@@ -42,10 +42,10 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.sideBarTimer = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridTickets = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblTickets = new System.Windows.Forms.Label();
             this.btnNewTicket = new System.Windows.Forms.Button();
+            this.lblTickets = new System.Windows.Forms.Label();
+            this.dataGridTickets = new System.Windows.Forms.DataGridView();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -54,8 +54,8 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridTickets)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTickets)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -65,7 +65,6 @@
             this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Controls.Add(this.panel2);
             this.sidebar.Controls.Add(this.panel3);
-            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.MaximumSize = new System.Drawing.Size(429, 1607);
             this.sidebar.MinimumSize = new System.Drawing.Size(112, 1607);
@@ -183,33 +182,38 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.AliceBlue;
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.dataGridTickets);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(429, 0);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1588, 1607);
+            this.panel4.Size = new System.Drawing.Size(2017, 1607);
             this.panel4.TabIndex = 1;
-            // 
-            // dataGridTickets
-            // 
-            this.dataGridTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridTickets.Location = new System.Drawing.Point(53, 129);
-            this.dataGridTickets.Name = "dataGridTickets";
-            this.dataGridTickets.RowHeadersWidth = 82;
-            this.dataGridTickets.RowTemplate.Height = 33;
-            this.dataGridTickets.Size = new System.Drawing.Size(1508, 871);
-            this.dataGridTickets.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.SteelBlue;
             this.panel5.Controls.Add(this.btnNewTicket);
             this.panel5.Controls.Add(this.lblTickets);
-            this.panel5.Location = new System.Drawing.Point(53, 65);
+            this.panel5.Location = new System.Drawing.Point(459, 174);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1508, 67);
-            this.panel5.TabIndex = 1;
+            this.panel5.Size = new System.Drawing.Size(1244, 67);
+            this.panel5.TabIndex = 5;
+            // 
+            // btnNewTicket
+            // 
+            this.btnNewTicket.BackColor = System.Drawing.Color.SlateGray;
+            this.btnNewTicket.FlatAppearance.BorderSize = 0;
+            this.btnNewTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewTicket.ForeColor = System.Drawing.Color.White;
+            this.btnNewTicket.Location = new System.Drawing.Point(1024, 10);
+            this.btnNewTicket.Name = "btnNewTicket";
+            this.btnNewTicket.Size = new System.Drawing.Size(199, 48);
+            this.btnNewTicket.TabIndex = 1;
+            this.btnNewTicket.Text = "New Ticket";
+            this.btnNewTicket.UseVisualStyleBackColor = false;
             // 
             // lblTickets
             // 
@@ -222,19 +226,15 @@
             this.lblTickets.TabIndex = 0;
             this.lblTickets.Text = "Tickets";
             // 
-            // btnNewTicket
+            // dataGridTickets
             // 
-            this.btnNewTicket.BackColor = System.Drawing.Color.SlateGray;
-            this.btnNewTicket.FlatAppearance.BorderSize = 0;
-            this.btnNewTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewTicket.ForeColor = System.Drawing.Color.White;
-            this.btnNewTicket.Location = new System.Drawing.Point(1283, 10);
-            this.btnNewTicket.Name = "btnNewTicket";
-            this.btnNewTicket.Size = new System.Drawing.Size(199, 48);
-            this.btnNewTicket.TabIndex = 1;
-            this.btnNewTicket.Text = "New Ticket";
-            this.btnNewTicket.UseVisualStyleBackColor = false;
+            this.dataGridTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridTickets.Location = new System.Drawing.Point(459, 238);
+            this.dataGridTickets.Name = "dataGridTickets";
+            this.dataGridTickets.RowHeadersWidth = 82;
+            this.dataGridTickets.RowTemplate.Height = 33;
+            this.dataGridTickets.Size = new System.Drawing.Size(1244, 871);
+            this.dataGridTickets.TabIndex = 4;
             // 
             // MainPage
             // 
@@ -242,8 +242,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2017, 1607);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.sidebar);
+            this.Controls.Add(this.panel4);
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MainPage_Load);
@@ -256,9 +256,9 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridTickets)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTickets)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -277,9 +277,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sideBarTimer;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridTickets;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label lblTickets;
         private System.Windows.Forms.Button btnNewTicket;
+        private System.Windows.Forms.Label lblTickets;
+        private System.Windows.Forms.DataGridView dataGridTickets;
     }
 }
