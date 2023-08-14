@@ -41,12 +41,14 @@ namespace BugTrackerApp
             if (this.sidebar.Width > 200)
             {
                 sidebar.Width = 50;
+                sidebarExpand = false;
             }
 
             // maximize
             else
             {
                 sidebar.Width = 492;
+                sidebarExpand = true;
             }
         }
     }
