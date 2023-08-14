@@ -25,14 +25,6 @@ namespace BugTrackerApp
 
         private void MainPage_Load(object sender, EventArgs e)
         {
-            Dictionary<int, int> map = new Dictionary<int, int>();
-
-            int minNum = map.OrderBy(x => x.Key).Select(x => x.Key).First();
-
-            var list = new List<int>();
-
-            list.ElementAt()
-
             
         }
     }
