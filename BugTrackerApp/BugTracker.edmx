@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="UserDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BugTrackerDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="developer">
           <Key>
             <PropertyRef Name="UserName" />
@@ -27,15 +27,41 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <EntityContainer Name="UserDatabaseModelStoreContainer">
+        <EntityType Name="tickets">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Assignee" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tickets_tickets">
+          <End Role="tickets" Type="Self.tickets" Multiplicity="1" />
+          <End Role="tickets1" Type="Self.tickets" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tickets">
+              <PropertyRef Name="Title" />
+            </Principal>
+            <Dependent Role="tickets1">
+              <PropertyRef Name="Title" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BugTrackerDatabaseModelStoreContainer">
           <EntitySet Name="developer" EntityType="Self.developer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tickets" EntityType="Self.tickets" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tickets_tickets" Association="Self.FK_tickets_tickets">
+            <End Role="tickets" EntitySet="tickets" />
+            <End Role="tickets1" EntitySet="tickets" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="UserDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BugTrackerDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="developer">
           <Key>
             <PropertyRef Name="UserName" />
@@ -58,18 +84,44 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityContainer Name="UserDatabaseEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityType Name="ticket">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Assignee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tickets_tickets">
+          <End Role="tickets" Type="Self.ticket" Multiplicity="1" />
+          <End Role="tickets1" Type="Self.ticket" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tickets">
+              <PropertyRef Name="Title" />
+            </Principal>
+            <Dependent Role="tickets1">
+              <PropertyRef Name="Title" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BugTrackerDatabase" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="developers" EntityType="Self.developer" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tickets" EntityType="Self.ticket" />
+          <AssociationSet Name="FK_tickets_tickets" Association="Self.FK_tickets_tickets">
+            <End Role="tickets" EntitySet="tickets" />
+            <End Role="tickets1" EntitySet="tickets" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="UserDatabaseModelStoreContainer" CdmEntityContainer="UserDatabaseEntities1">
+        <EntityContainerMapping StorageEntityContainer="BugTrackerDatabaseModelStoreContainer" CdmEntityContainer="BugTrackerDatabase">
           <EntitySetMapping Name="developers">
-            <EntityTypeMapping TypeName="UserDatabaseModel.developer">
+            <EntityTypeMapping TypeName="BugTrackerDatabaseModel.developer">
               <MappingFragment StoreEntitySet="developer">
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
@@ -82,13 +134,23 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="UserDatabaseModel.sysdiagram">
+            <EntityTypeMapping TypeName="BugTrackerDatabaseModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tickets">
+            <EntityTypeMapping TypeName="BugTrackerDatabaseModel.ticket">
+              <MappingFragment StoreEntitySet="tickets">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Assignee" ColumnName="Assignee" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

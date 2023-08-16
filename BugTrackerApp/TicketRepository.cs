@@ -12,11 +12,11 @@ namespace BugTrackerApp
     }
     internal class TicketRepository : TicketFunction
     {
-        BugTrackerTicketsEntities ticketsEntities;
+        BugTrackerDatabase ticketsEntities;
 
         public TicketRepository()
         {
-            ticketsEntities = new BugTrackerTicketsEntities();
+            ticketsEntities = new BugTrackerDatabase();
         }
 
         public ICollection<ticket> GetTickets()

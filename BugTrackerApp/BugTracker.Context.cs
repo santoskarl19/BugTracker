@@ -13,10 +13,10 @@ namespace BugTrackerApp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BugTrackerTicketsEntities : DbContext
+    public partial class BugTrackerDatabase : DbContext
     {
-        public BugTrackerTicketsEntities()
-            : base("name=BugTrackerTicketsEntities")
+        public BugTrackerDatabase()
+            : base("name=BugTrackerDatabase")
         {
         }
     
@@ -25,6 +25,8 @@ namespace BugTrackerApp
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<developer> developers { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<ticket> tickets { get; set; }
     }
 }

@@ -58,6 +58,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BugTracker.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BugTracker.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BugTracker.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BugTracker.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BugTracker.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BugTracker.edmx</DependentUpon>
+    </Compile>
     <Compile Include="CreateNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,22 +80,7 @@
       <DependentUpon>CreateNewUser.cs</DependentUpon>
     </Compile>
     <Compile Include="developer.cs">
-      <DependentUpon>developerDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="developerDatabase.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>developerDatabase.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="developerDatabase.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>developerDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="developerDatabase.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>developerDatabase.edmx</DependentUpon>
+      <DependentUpon>BugTracker.tt</DependentUpon>
     </Compile>
     <Compile Include="ForgotPasswordPage.cs">
       <SubType>Form</SubType>
@@ -104,27 +104,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityQuestions.cs" />
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>developerDatabase.tt</DependentUpon>
+      <DependentUpon>BugTracker.tt</DependentUpon>
     </Compile>
     <Compile Include="ticket.cs">
-      <DependentUpon>Tickets.tt</DependentUpon>
+      <DependentUpon>BugTracker.tt</DependentUpon>
     </Compile>
     <Compile Include="TicketRepository.cs" />
-    <Compile Include="Tickets.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tickets.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tickets.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tickets.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tickets.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tickets.edmx</DependentUpon>
-    </Compile>
     <Compile Include="UserRepository.cs" />
     <EmbeddedResource Include="CreateNewUser.resx">
       <DependentUpon>CreateNewUser.cs</DependentUpon>
@@ -147,12 +132,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="developerDatabase.edmx">
+    <EntityDeploy Include="BugTracker.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>developerDatabase.Designer.cs</LastGenOutput>
+      <LastGenOutput>BugTracker.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="developerDatabase.edmx.diagram">
-      <DependentUpon>developerDatabase.edmx</DependentUpon>
+    <None Include="BugTracker.edmx.diagram">
+      <DependentUpon>BugTracker.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -164,13 +149,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="Tickets.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Tickets.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Tickets.edmx.diagram">
-      <DependentUpon>Tickets.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -179,25 +157,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="developerDatabase.Context.tt">
+    <Content Include="BugTracker.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>developerDatabase.edmx</DependentUpon>
-      <LastGenOutput>developerDatabase.Context.cs</LastGenOutput>
+      <DependentUpon>BugTracker.edmx</DependentUpon>
+      <LastGenOutput>BugTracker.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="developerDatabase.tt">
+    <Content Include="BugTracker.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>developerDatabase.edmx</DependentUpon>
-      <LastGenOutput>developerDatabase.cs</LastGenOutput>
-    </Content>
-    <Content Include="Tickets.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Tickets.edmx</DependentUpon>
-      <LastGenOutput>Tickets.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Tickets.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Tickets.edmx</DependentUpon>
-      <LastGenOutput>Tickets.cs</LastGenOutput>
+      <DependentUpon>BugTracker.edmx</DependentUpon>
+      <LastGenOutput>BugTracker.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

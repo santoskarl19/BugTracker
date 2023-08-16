@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BugTrackerDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="developer">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdminRights" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityQuestion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecurityAnswer" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tickets">
+    <Key>
+      <PropertyRef Name="Title" />
+    </Key>
+    <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Assignee" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tickets_tickets">
+    <End Role="tickets" Type="Self.tickets" Multiplicity="1" />
+    <End Role="tickets1" Type="Self.tickets" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tickets">
+        <PropertyRef Name="Title" />
+      </Principal>
+      <Dependent Role="tickets1">
+        <PropertyRef Name="Title" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BugTrackerDatabaseModelStoreContainer">
+    <EntitySet Name="developer" EntityType="Self.developer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tickets" EntityType="Self.tickets" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tickets_tickets" Association="Self.FK_tickets_tickets">
+      <End Role="tickets" EntitySet="tickets" />
+      <End Role="tickets1" EntitySet="tickets" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

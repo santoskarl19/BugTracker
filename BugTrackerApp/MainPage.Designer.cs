@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -193,12 +195,12 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel5.BackColor = System.Drawing.Color.SlateGray;
             this.panel5.Controls.Add(this.btnNewTicket);
             this.panel5.Controls.Add(this.lblTickets);
             this.panel5.Location = new System.Drawing.Point(459, 174);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1244, 67);
+            this.panel5.Size = new System.Drawing.Size(1457, 67);
             this.panel5.TabIndex = 5;
             // 
             // btnNewTicket
@@ -208,7 +210,7 @@
             this.btnNewTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewTicket.ForeColor = System.Drawing.Color.White;
-            this.btnNewTicket.Location = new System.Drawing.Point(1024, 10);
+            this.btnNewTicket.Location = new System.Drawing.Point(1240, 10);
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(199, 48);
             this.btnNewTicket.TabIndex = 1;
@@ -228,12 +230,35 @@
             // 
             // dataGridTickets
             // 
-            this.dataGridTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridTickets.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.dataGridTickets.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridTickets.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridTickets.ColumnHeadersHeight = 45;
+            this.dataGridTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridTickets.EnableHeadersVisualStyles = false;
+            this.dataGridTickets.GridColor = System.Drawing.Color.Black;
             this.dataGridTickets.Location = new System.Drawing.Point(459, 238);
             this.dataGridTickets.Name = "dataGridTickets";
+            this.dataGridTickets.RowHeadersVisible = false;
             this.dataGridTickets.RowHeadersWidth = 82;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridTickets.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridTickets.RowTemplate.Height = 33;
-            this.dataGridTickets.Size = new System.Drawing.Size(1244, 871);
+            this.dataGridTickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridTickets.Size = new System.Drawing.Size(1457, 871);
             this.dataGridTickets.TabIndex = 4;
             // 
             // MainPage

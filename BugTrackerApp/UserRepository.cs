@@ -17,10 +17,10 @@ namespace BugTrackerApp
 
     internal class UserRepository : LoginFunctions
     {
-        UserDatabaseEntities1 entities;
+        BugTrackerDatabase entities;
         public UserRepository()
         {
-            entities = new UserDatabaseEntities1();
+            entities = new BugTrackerDatabase();
         }
 
         // add user to database
