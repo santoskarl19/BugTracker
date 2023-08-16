@@ -16,6 +16,7 @@ namespace BugTrackerApp
     {
 
         TicketRepository ticketRepository;
+        NewTicket newTicketForm;
         public MainPage()
         {
             InitializeComponent();
@@ -28,9 +29,11 @@ namespace BugTrackerApp
         private void MainPage_Load(object sender, EventArgs e)
         {
             CollapseMenu();
-
+            newTicketForm = new NewTicket();
             ticketRepository = new TicketRepository();
             dataGridTickets.DataSource = ticketRepository.GetTickets();
+
+            
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -52,6 +55,11 @@ namespace BugTrackerApp
             {
                 sidebar.Width = 492;
             }
+        }
+
+        private void btnNewTicket_Click(object sender, EventArgs e)
+        {
+            newTicketForm.Show();
         }
     }
 }

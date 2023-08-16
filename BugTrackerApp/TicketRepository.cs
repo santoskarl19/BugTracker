@@ -9,6 +9,8 @@ namespace BugTrackerApp
     interface TicketFunction
     {
         ICollection<ticket> GetTickets();
+        void AddTicket(ticket ticket);
+
     }
     internal class TicketRepository : TicketFunction
     {
@@ -17,6 +19,12 @@ namespace BugTrackerApp
         public TicketRepository()
         {
             ticketsEntities = new BugTrackerDatabase();
+        }
+
+        public void AddTicket(ticket ticket)
+        {
+            ticketsEntities.tickets.Add(ticket);
+            ticketsEntities.SaveChanges();
         }
 
         public ICollection<ticket> GetTickets()
