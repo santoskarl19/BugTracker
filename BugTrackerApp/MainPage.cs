@@ -32,8 +32,7 @@ namespace BugTrackerApp
             newTicketForm = new NewTicket();
             ticketRepository = new TicketRepository();
             dataGridTickets.DataSource = ticketRepository.GetTickets();
-
-            
+            panelUpdateStatus.Hide();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -60,6 +59,16 @@ namespace BugTrackerApp
         private void btnNewTicket_Click(object sender, EventArgs e)
         {
             newTicketForm.Show();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dataGridTickets.DataSource = ticketRepository.GetTickets();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            panelUpdateStatus.Show();
         }
     }
 }
