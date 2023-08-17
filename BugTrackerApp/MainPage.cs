@@ -31,7 +31,7 @@ namespace BugTrackerApp
             CollapseMenu();
             newTicketForm = new NewTicket();
             ticketRepository = new TicketRepository();
-            dataGridTickets.DataSource = ticketRepository.GetTickets();
+            dataGridTickets.DataSource = ticketRepository.GetAllTickets();
             panelUpdateStatus.Hide();
         }
 
@@ -63,11 +63,20 @@ namespace BugTrackerApp
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            dataGridTickets.DataSource = ticketRepository.GetTickets();
+            dataGridTickets.DataSource = ticketRepository.GetAllTickets();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            var title = dataGridTickets.CurrentRow.Cells[0].Value as string;
+            var ticketToDisplay = ticketRepository.GetTicket(title);
+
+            comboBoxAssigne.Text = ticketToDisplay.Assignee;
+            txtStatusUpdate.Text = ticketToDisplay.Status;
+            txtTitle.Text = ticketToDisplay.Title;
+
+            txtTitle.Enabled = false;
+
             panelUpdateStatus.Show();
         }
     }
