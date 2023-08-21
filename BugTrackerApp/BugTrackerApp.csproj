@@ -101,6 +101,12 @@
     <Compile Include="MainPageAdmin.Designer.cs">
       <DependentUpon>MainPageAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainPageRegularUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPageRegularUser.Designer.cs">
+      <DependentUpon>MainPageRegularUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainPageAdmin.resx">
       <DependentUpon>MainPageAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPageRegularUser.resx">
+      <DependentUpon>MainPageRegularUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>

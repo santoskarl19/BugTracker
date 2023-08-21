@@ -50,6 +50,16 @@ namespace BugTrackerApp
             return false;
         }
 
+        public bool CheckIfAdmin(string userName)
+        {
+            var userToFind = entities.developers.Find(userName);
+
+            if (userToFind.AdminRights == "Yes")
+                return true;
+
+            return false;
+        }
+
         // to reset passwrod | verify username, security question and security password
         public bool UpdatePasswordVerification(string userName, string secQuestion, string secAnswer, string password)
         {

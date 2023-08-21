@@ -79,6 +79,7 @@
             this.btnBackToLogin_Ticket.TabIndex = 30;
             this.btnBackToLogin_Ticket.Text = "Back To Login";
             this.btnBackToLogin_Ticket.UseVisualStyleBackColor = false;
+            this.btnBackToLogin_Ticket.Click += new System.EventHandler(this.btnBackToLogin_Ticket_Click);
             // 
             // btnClear_TicketSubmission
             // 

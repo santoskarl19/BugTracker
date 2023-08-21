@@ -20,3 +20,4 @@ C:\Git Desktop\Repos\BugTracker\BugTrackerApp\bin\Debug\EntityFramework.SqlServe
 C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.NewTicket.resources
 C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.MainPageAdmin.resources
 C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.ManageUsers.resources
+C:\Git Desktop\Repos\BugTracker\BugTrackerApp\obj\Debug\BugTrackerApp.MainPageRegularUser.resources

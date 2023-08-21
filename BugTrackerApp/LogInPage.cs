@@ -17,6 +17,7 @@ namespace BugTrackerApp
     {
         UserRepository userRepository;
         MainPageAdmin mainPage = new MainPageAdmin();
+        MainPageRegularUser mainPageRegular = new MainPageRegularUser();
         CreateNewUser createNewUser = new CreateNewUser();
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
 
@@ -55,7 +56,25 @@ namespace BugTrackerApp
             else
             {
                 MessageBox.Show("Login Successful!");
-                mainPage.Show();
+                
+                if (userRepository.CheckIfAdmin(userName))
+                {
+                    if (mainPage == null || mainPage.IsDisposed)
+                    {
+                        mainPage = new MainPageAdmin();
+                    }
+
+                    mainPage.Show();
+                }
+                else
+                {
+                    if (mainPageRegular == null || mainPageRegular.IsDisposed)
+                    {
+                        mainPageRegular = new MainPageRegularUser();
+                    }
+
+                    mainPageRegular.Show();
+                }
 
                 txtUserName.Clear();
                 txtPassword.Clear();

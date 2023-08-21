@@ -12,15 +12,14 @@ using MaterialSkin.Controls;
 
 namespace BugTrackerApp
 {
-    public partial class MainPageAdmin : MaterialForm
+    public partial class MainPageRegularUser : MaterialForm
     {
-
         TicketRepository ticketRepository;
         NewTicket newTicketForm;
         Users users;
         ManageUsers manageUsers;
-        MainPageAdmin mainPageAdmin;
-        public MainPageAdmin()
+        MainPageRegularUser mainPageRegularUser;
+        public MainPageRegularUser()
         {
             InitializeComponent();
             var skinManager = MaterialSkinManager.Instance;
@@ -29,7 +28,7 @@ namespace BugTrackerApp
             SkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
         }
 
-        private void MainPage_Load(object sender, EventArgs e)
+        private void MainPageRegularUser_Load(object sender, EventArgs e)
         {
             CollapseMenu();
 
@@ -37,25 +36,16 @@ namespace BugTrackerApp
             ticketRepository = new TicketRepository();
             users = new Users();
             manageUsers = new ManageUsers();
-            mainPageAdmin = new MainPageAdmin();
+            mainPageRegularUser = new MainPageRegularUser();
 
             dataGridTickets.DataSource = ticketRepository.GetAllTickets();
-            
-            var listOfUsers = users.GetAllUsers();
-            comboBoxAssigne.DataSource = listOfUsers;
 
             panelUpdateStatus.Hide();
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            CollapseMenu();
         }
 
         // collapse/uncollapse sidebar
         private void CollapseMenu()
         {
-            // minimize
             if (this.sidebar.Width > 200)
             {
                 sidebar.Width = 50;
@@ -68,31 +58,31 @@ namespace BugTrackerApp
             }
         }
 
-        // display new ticket submission form
+        // menu button for sidepanel
+        private void btnMenu_Click_1(object sender, EventArgs e)
+        {
+            CollapseMenu();
+        }
+
+        // new ticket submission button
         private void btnNewTicket_Click(object sender, EventArgs e)
         {
             newTicketForm.Show();
         }
 
-        // refresh data currently displayed in the window
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            dataGridTickets.DataSource = ticketRepository.GetAllTickets();
-        }
-
-        // update selected ticket. panel will be displayed below the table
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            panelUpdateStatus.Show();
+
             var title = dataGridTickets.CurrentRow.Cells[0].Value as string;
             var ticketToDisplay = ticketRepository.GetTicket(title);
 
-            comboBoxAssigne.Text = ticketToDisplay.Assignee;
-            txtStatusUpdate.Text = ticketToDisplay.Status;
-            txtTitle.Text = ticketToDisplay.Title;
+            comboBoxAssigne2.Text = ticketToDisplay.Assignee;
+            txtStatusUpdate2.Text = ticketToDisplay.Status;
+            txtTitle2.Text = ticketToDisplay.Title;
 
-            txtTitle.Enabled = false;
-
-            panelUpdateStatus.Show();
+            txtTitle2.Enabled = false;
+            comboBoxAssigne2.Enabled = false;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -100,30 +90,18 @@ namespace BugTrackerApp
             var title = dataGridTickets.CurrentRow.Cells[0].Value as string;
             var ticketToUpdate = ticketRepository.GetTicket(title);
 
-            ticketToUpdate.Assignee = comboBoxAssigne.Text;
-            ticketToUpdate.Status = txtStatusUpdate.Text;
+            ticketToUpdate.Status = txtStatusUpdate2.Text;
 
             ticketRepository.UpdateInfo(title, ticketToUpdate);
 
             MessageBox.Show("Ticket has been updated!");
 
-            comboBoxAssigne.SelectedIndex = -1;
-            txtStatusUpdate.Clear();
+            txtStatusUpdate2.Clear();
         }
 
-        // delete the ticket selected
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            var title = dataGridTickets.CurrentRow.Cells[0].Value as string;
-            var ticketToDelete = ticketRepository.GetTicket(title);
-
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this ticket?", "Delete File", MessageBoxButtons.YesNo);
-
-            if  (result == DialogResult.Yes)
-            {
-                ticketRepository.DeleteTicket(ticketToDelete);
-                MessageBox.Show("Ticket has been deleted!");
-            }
+            dataGridTickets.DataSource = ticketRepository.GetAllTickets();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -132,14 +110,10 @@ namespace BugTrackerApp
 
             if (result == DialogResult.Yes)
             {
+                //this.Hide();
                 this.Close();
-                mainPageAdmin = null;
+                mainPageRegularUser = null;
             }
-        }
-
-        private void btnAdmin_Click(object sender, EventArgs e)
-        {
-            manageUsers.Show();
         }
     }
 }

@@ -57,5 +57,10 @@ namespace BugTrackerApp
             comboBoxActiveUsers.SelectedIndex = -1;
             comboBoxAdminRights.SelectedIndex = -1;
         }
+
+        private void btnBackToLogin_Ticket_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
