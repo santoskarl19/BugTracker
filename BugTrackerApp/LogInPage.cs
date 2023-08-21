@@ -16,7 +16,7 @@ namespace BugTrackerApp
     public partial class LogInPage : MaterialForm
     {
         UserRepository userRepository;
-        MainPage mainPage = new MainPage();
+        MainPageAdmin mainPage = new MainPageAdmin();
         CreateNewUser createNewUser = new CreateNewUser();
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
 

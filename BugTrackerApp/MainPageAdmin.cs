@@ -12,12 +12,14 @@ using MaterialSkin.Controls;
 
 namespace BugTrackerApp
 {
-    public partial class MainPage : MaterialForm
+    public partial class MainPageAdmin : MaterialForm
     {
 
         TicketRepository ticketRepository;
         NewTicket newTicketForm;
-        public MainPage()
+        Users users;
+        ManageUsers manageUsers;
+        public MainPageAdmin()
         {
             InitializeComponent();
             var skinManager = MaterialSkinManager.Instance;
@@ -29,9 +31,17 @@ namespace BugTrackerApp
         private void MainPage_Load(object sender, EventArgs e)
         {
             CollapseMenu();
+
             newTicketForm = new NewTicket();
             ticketRepository = new TicketRepository();
+            users = new Users();
+            manageUsers = new ManageUsers();
+
             dataGridTickets.DataSource = ticketRepository.GetAllTickets();
+            
+            var listOfUsers = users.GetAllUsers();
+            comboBoxAssigne.DataSource = listOfUsers;
+
             panelUpdateStatus.Hide();
         }
 
@@ -56,16 +66,19 @@ namespace BugTrackerApp
             }
         }
 
+        // display new ticket submission form
         private void btnNewTicket_Click(object sender, EventArgs e)
         {
             newTicketForm.Show();
         }
 
+        // refresh data currently displayed in the window
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dataGridTickets.DataSource = ticketRepository.GetAllTickets();
         }
 
+        // update selected ticket. panel will be displayed below the table
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             var title = dataGridTickets.CurrentRow.Cells[0].Value as string;
@@ -78,6 +91,52 @@ namespace BugTrackerApp
             txtTitle.Enabled = false;
 
             panelUpdateStatus.Show();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            var title = dataGridTickets.CurrentRow.Cells[0].Value as string;
+            var ticketToUpdate = ticketRepository.GetTicket(title);
+
+            ticketToUpdate.Assignee = comboBoxAssigne.Text;
+            ticketToUpdate.Status = txtStatusUpdate.Text;
+
+            ticketRepository.UpdateInfo(title, ticketToUpdate);
+
+            MessageBox.Show("Ticket has been updated!");
+
+            comboBoxAssigne.SelectedIndex = -1;
+            txtStatusUpdate.Clear();
+        }
+
+        // delete the ticket selected
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var title = dataGridTickets.CurrentRow.Cells[0].Value as string;
+            var ticketToDelete = ticketRepository.GetTicket(title);
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this ticket?", "Delete File", MessageBoxButtons.YesNo);
+
+            if  (result == DialogResult.Yes)
+            {
+                ticketRepository.DeleteTicket(ticketToDelete);
+                MessageBox.Show("Ticket has been deleted!");
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you would like to logout?", "Confirmation", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            manageUsers.Show();
         }
     }
 }
