@@ -20,6 +20,7 @@ namespace BugTrackerApp
         Users users;
         ManageUsers manageUsers;
         MainPageAdmin mainPageAdmin;
+        LogInPage logInPage;
         public MainPageAdmin()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace BugTrackerApp
             users = new Users();
             manageUsers = new ManageUsers();
             mainPageAdmin = new MainPageAdmin();
+            logInPage = new LogInPage();
 
             dataGridTickets.DataSource = ticketRepository.GetAllTickets();
             

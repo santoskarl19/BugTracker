@@ -33,8 +33,6 @@ namespace BugTrackerApp
         private void Form1_Load(object sender, EventArgs e)
         {
             userRepository = new UserRepository();
-
-            //
         }
 
         // log in functionality
@@ -65,6 +63,7 @@ namespace BugTrackerApp
                     }
 
                     mainPage.Show();
+
                 }
                 else
                 {
@@ -91,5 +90,8 @@ namespace BugTrackerApp
         {
             forgotPasswordPage.Show();
         }
+
+        // TODO: reset data source so new admins can log in 
+
     }
 }
