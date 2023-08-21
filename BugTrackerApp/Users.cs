@@ -28,5 +28,19 @@ namespace BugTrackerApp
 
             return userFirstNames;
         }
+
+        public List<string> GetAllUserName() 
+        {
+            List<string> userNames = new List<string>();
+
+            var users = entities.developers.ToList();
+
+            foreach (var user in users)
+            {
+                userNames.Add(user.UserName);
+            }
+
+            return userNames;
+        }
     }
 }

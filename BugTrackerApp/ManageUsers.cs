@@ -16,6 +16,8 @@ namespace BugTrackerApp
     {
         Users users;
         AdminRightsOptions options;
+        UserRepository userRepository;
+
         public ManageUsers()
         {
             InitializeComponent();
@@ -29,9 +31,10 @@ namespace BugTrackerApp
         {
             users = new Users();
             options = new AdminRightsOptions();
+            userRepository = new UserRepository();
 
             // combo box for active users
-            var activeUsers = users.GetAllUsers();
+            var activeUsers = users.GetAllUserName();
             comboBoxActiveUsers.DataSource = activeUsers;
             comboBoxActiveUsers.SelectedIndex = -1;
 
@@ -42,7 +45,17 @@ namespace BugTrackerApp
 
         private void btnUpdateAdminRights_Click(object sender, EventArgs e)
         {
+            var userName = comboBoxActiveUsers.Text;
+            var userToUpdate = userRepository.GetUser(userName);
 
+            userToUpdate.AdminRights = comboBoxAdminRights.Text;
+
+            userRepository.UpdateAdminRights(userName, userToUpdate);
+
+            MessageBox.Show("Admin rights has been updated!");
+
+            comboBoxActiveUsers.SelectedIndex = -1;
+            comboBoxAdminRights.SelectedIndex = -1;
         }
     }
 }

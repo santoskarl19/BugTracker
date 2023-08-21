@@ -86,5 +86,19 @@ namespace BugTrackerApp
             employee.Password = password;
             entities.SaveChanges();
         }
+
+        public void UpdateAdminRights(string name, developer developer)
+        {
+            var userToUpdate = entities.developers.Find(name);
+
+            userToUpdate.AdminRights = developer.AdminRights;
+
+            entities.SaveChanges();
+        }
+
+        public developer GetUser(string name)
+        {
+            return entities.developers.Find(name);
+        }
     }
 }
