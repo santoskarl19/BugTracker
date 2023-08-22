@@ -113,7 +113,6 @@ namespace BugTrackerApp
             txtStatusUpdate.Clear();
         }
 
-        // delete the ticket selected
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var title = dataGridTickets.CurrentRow.Cells[0].Value as string;

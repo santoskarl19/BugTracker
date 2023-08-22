@@ -110,7 +110,6 @@ namespace BugTrackerApp
 
             if (result == DialogResult.Yes)
             {
-                //this.Hide();
                 this.Close();
                 mainPageRegularUser = null;
             }

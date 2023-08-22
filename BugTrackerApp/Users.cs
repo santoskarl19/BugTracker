@@ -45,14 +45,6 @@ namespace BugTrackerApp
             return userNames;
         }
 
-        public bool IsAdmin(string username)
-        {
-            var currentUser = entities.developers.Find(username);
-
-            if (currentUser.AdminRights == "Yes")
-                return true;
-
-            return false;
-        }
+        
     }
 }

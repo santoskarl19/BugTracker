@@ -55,8 +55,10 @@ namespace BugTrackerApp
             {
                 MessageBox.Show("Login Successful!");
                 
+                // check if user has admin rights
                 if (userRepository.CheckIfAdmin(userName))
                 {
+                    // if previous form has been closed, instantiate a new one
                     if (mainPage == null || mainPage.IsDisposed)
                     {
                         mainPage = new MainPageAdmin();
@@ -67,6 +69,7 @@ namespace BugTrackerApp
                 }
                 else
                 {
+                    // if previous form has been closed, instantiate a new one
                     if (mainPageRegular == null || mainPageRegular.IsDisposed)
                     {
                         mainPageRegular = new MainPageRegularUser();
@@ -75,6 +78,7 @@ namespace BugTrackerApp
                     mainPageRegular.Show();
                 }
 
+                // clear the text fields
                 txtUserName.Clear();
                 txtPassword.Clear();
             }
