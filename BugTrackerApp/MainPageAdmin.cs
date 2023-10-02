@@ -138,6 +138,7 @@ namespace BugTrackerApp
             }
         }
 
+        // open manageUser page
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             manageUsers.Show();
